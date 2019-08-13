@@ -47,7 +47,7 @@ $m\times n$-submatrix of $\mathbf{A}$.
 The densest $m\times n$-submatrix problem can be formulated as:
 
 $$\begin{equation}
-    \min_{\mathbf{X}, \mathbf{Y} \in { \{0,1\}}^{m\times n} } {\tr(\mathbf{Y} \mathbf{e} \mathbf{e}^T): \mathrm{P}_{\Omega}(\mathbf{X}-\mathbf{Y}) = \mathbf{0}, \tr(\mathbf{X} \mathbf{e} \mathbf{e}^T) = mn, \rank (\mathbf{X}) = 1 },
+    \min_{\mathbf{X}, \mathbf{Y} \in { \{0,1\}}^{M\times N} } {\tr(\mathbf{Y} \mathbf{e} \mathbf{e}^T): \mathrm{P}_{\Omega}(\mathbf{X}-\mathbf{Y}) = \mathbf{0}, \tr(\mathbf{X} \mathbf{e} \mathbf{e}^T) = mn, \rank (\mathbf{X}) = 1 },
 \end{equation}$$
 
 where
