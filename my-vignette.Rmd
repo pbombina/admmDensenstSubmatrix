@@ -145,18 +145,18 @@ image(random$dense_submatrix, useRaster=TRUE, axes=FALSE, main = "Matrix X0")
 image(random$disagreements, useRaster=TRUE, axes=FALSE, main = "Matrix Y0")
 ```
 
-Tne vizualization of the randomly generated matrix $\mathbf{G}$ helps us to understand its structure. It is clear that $\mathbf{G}$ contains a dense $50 \times 40$ block (in the bottom left corner).
+Tne vizualization of the randomly generated matrix $\mathbf{A}$ helps us to understand its structure. It is clear that $\mathbf{A}$ contains a dense $50 \times 40$ block (in the bottom left corner).
 
-![Visual representation of randomly generated $\mathbf{G}$](Rplot.jpeg){width=400px}
+![Visual representation of randomly generated $\mathbf{A}$](Rplot.jpeg){width=400px}
 
-We can remove all noise and isolate an image of a rank-one matrix $X0$ with $mn$ nonzero entries.
+We can remove all noise and isolate an image of a rank-one matrix $\mathbf{X0}$ with $mn$ nonzero entries.
 
 ![Visual representation of dense submatrix](Rplot01.jpeg){width=400px}
 
 
-Then we vizualize matrix $Y0$ to see the number of disagreements between original matrix $G$ and $X0$.
+Then we vizualize matrix $\mathbf{Y0}$ to see the number of disagreements between original matrix $\mathbf{A}$ and $\mathbf{X0}$.
 
-![Disagreement between $\mathbf{G}$ and $\mathbf{X_0}$](Rplot02.jpeg){width=400px}
+![Disagreement between $\mathbf{A}$ and $\mathbf{X_0}$](Rplot02.jpeg){width=400px}
 
 
 
@@ -178,7 +178,7 @@ image(admm$Y, useRaster=TRUE, axes=FALSE, main = "Matrix Y")
 
 
 
-The ADMM solver returns the optimal solutions $\mathbf{X}$ and $\mathbf{Y}$. It must be noted that matrices $\mathbf X$ and $\mathbf Y$ are identical to the actual structures of $\mathbf{X_0}$ and $\mathbf{Y_0}$$. The planted submatrix is recovered.
+The ADMM solver returns the optimal solutions $\mathbf{X}$ and $\mathbf{Y}$. It must be noted that matrices $\mathbf X$ and $\mathbf Y$ are identical to the actual structures of $\mathbf{X_0}$ and $\mathbf{Y_0}$. The planted submatrix is recovered.
 
 ![Optimal solution \mathbf{X}](Rplot03.jpeg){width=400px}
 
@@ -187,25 +187,24 @@ The ADMM solver returns the optimal solutions $\mathbf{X}$ and $\mathbf{Y}$. It 
 
 
 ## Collaboration Network
-The following is a simple example on how one could use the package to analyze the collaboration network found in the JAZZ dataset. It is know that this network contains a clique of 100 nodes.  We have already prepared dataset to work with. More details can be found in the provided file `JAZZ_IN_R.R.`
+The following is a simple example on how one could use the package to analyze the collaboration network found in the JAZZ dataset. It is know that this network contains a clique of $100$ nodes. 
+
+We have already prepared dataset to work with. More details can be found in the provided file `JAZZ_IN_R.R.`
 
 ```{r jazz, eval=FALSE}
-#Install packages
-install.packages("netdiffuseR")
-library(netdiffuseR)
-
 #Load dataset
 load(file="JAZZ.RData")
 
 #Initialize problem size and densities
-G=new
-m=100
-n=100
-tau=0.85
+G=new #define matrix G equivalent to JAZZ dataset 
+m=100 #clique size or the number of rows of the dense submatrix 
+n=100 #clique size of the number of columns of the dense sumbatrix
+tau=0.85 
 opt_tol=1.0e-2
 verbose=1
 maxiter=2000
 gamma=8/n
+
 
 
 #call ADMM solver
@@ -220,14 +219,14 @@ Y0[1:100,1:100]=matrix(1L,nrow=100,ncol=1000)-G[1:100,1:100]
 
 #Check primal and dual residuals.
 C=admm$X-X0
-a=norm(C, "F")
-b=norm(X0,"F")
+a=norm(C, "F") #Frobenius norm of matrix C 
+b=norm(X0,"F") #Frobenius norm of matrix X0
 recovery = matrix(0L,nrow=1, ncol=1)#create recovery matrix
 
 if (a/b^2<opt_tol){
 recovery=recovery+1
 } else {
-  recovery=0
+  recovery=0 #Recovery condition 
   }
 
 
@@ -235,3 +234,6 @@ recovery=recovery+1
 
 
 ```
+
+Our algorithm converges to the dense submatrix representing the community of $100$ musicians after $50$ iterations. 
+
