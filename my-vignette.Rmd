@@ -189,6 +189,8 @@ The ADMM solver returns the optimal solutions $\mathbf{X}$ and $\mathbf{Y}$. It 
 ## Collaboration Network
 The following is a simple example on how one could use the package to analyze the collaboration network found in the JAZZ dataset. It is know that this network contains a clique of $100$ nodes. 
 
+![JAZZ Network](0001.jpg){width=400px}
+
 We have already prepared dataset to work with. More details can be found in the provided file `JAZZ_IN_R.R.`
 
 ```{r jazz, eval=FALSE}
