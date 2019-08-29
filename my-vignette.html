@@ -13,7 +13,7 @@
 
 <meta name="author" content="Brendan Ames, Polina Bombina" />
 
-<meta name="date" content="2019-08-27" />
+<meta name="date" content="2019-08-28" />
 
 <title>admmDensestSubmatrix: ADMM for the densest submtarix problem</title>
 
@@ -313,7 +313,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 <h1 class="title toc-ignore">admmDensestSubmatrix: ADMM for the densest submtarix problem</h1>
 <h4 class="author">Brendan Ames, Polina Bombina</h4>
-<h4 class="date">2019-08-27</h4>
+<h4 class="date">2019-08-28</h4>
 
 
 
@@ -448,11 +448,11 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb4-5" data-line-number="5">G=new <span class="co">#define matrix G equivalent to JAZZ dataset </span></a>
 <a class="sourceLine" id="cb4-6" data-line-number="6">m=<span class="dv">100</span> <span class="co">#clique size or the number of rows of the dense submatrix </span></a>
 <a class="sourceLine" id="cb4-7" data-line-number="7">n=<span class="dv">100</span> <span class="co">#clique size of the number of columns of the dense sumbatrix</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8">tau=<span class="fl">0.85</span> </a>
-<a class="sourceLine" id="cb4-9" data-line-number="9">opt_tol=<span class="fl">1.0e-2</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">tau=<span class="fl">0.85</span> <span class="co">#regularization parameter</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">opt_tol=<span class="fl">1.0e-2</span> <span class="co">#optimal tolerance</span></a>
 <a class="sourceLine" id="cb4-10" data-line-number="10">verbose=<span class="dv">1</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11">maxiter=<span class="dv">2000</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12">gamma=<span class="dv">8</span><span class="op">/</span>n</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">maxiter=<span class="dv">2000</span> <span class="co">#number of iterations</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">gamma=<span class="dv">8</span><span class="op">/</span>n <span class="co">#regularization parameter</span></a>
 <a class="sourceLine" id="cb4-13" data-line-number="13"></a>
 <a class="sourceLine" id="cb4-14" data-line-number="14"></a>
 <a class="sourceLine" id="cb4-15" data-line-number="15"></a>

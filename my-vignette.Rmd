@@ -177,7 +177,6 @@ image(admm$Y, useRaster=TRUE, axes=FALSE, main = "Matrix Y")
 ```
 
 
-
 The ADMM solver returns the optimal solutions $\mathbf{X}$ and $\mathbf{Y}$. It must be noted that matrices $\mathbf X$ and $\mathbf Y$ are identical to the actual structures of $\mathbf{X_0}$ and $\mathbf{Y_0}$. The planted submatrix is recovered.
 
 ![Optimal solution \mathbf{X}](Rplot03.jpeg){width=400px}
@@ -187,7 +186,7 @@ The ADMM solver returns the optimal solutions $\mathbf{X}$ and $\mathbf{Y}$. It 
 
 
 ## Collaboration Network
-The following is a simple example on how one could use the package to analyze the collaboration network found in the JAZZ dataset. It is know that this network contains a clique of $100$ nodes. 
+The following is a simple example on how one could use the package to analyze the collaboration network found in the JAZZ dataset. It is know that this network contains a clique of $100$ nodes.  
 
 ![JAZZ Network](0001.jpg){width=400px}
 
@@ -201,11 +200,11 @@ load(file="JAZZ.RData")
 G=new #define matrix G equivalent to JAZZ dataset 
 m=100 #clique size or the number of rows of the dense submatrix 
 n=100 #clique size of the number of columns of the dense sumbatrix
-tau=0.85 
-opt_tol=1.0e-2
+tau=0.85 #regularization parameter
+opt_tol=1.0e-2 #optimal tolerance
 verbose=1
-maxiter=2000
-gamma=8/n
+maxiter=2000 #number of iterations
+gamma=8/n #regularization parameter
 
 
 
@@ -237,5 +236,5 @@ recovery=recovery+1
 
 ```
 
-Our algorithm converges to the dense submatrix representing the community of $100$ musicians after $50$ iterations. 
+Our algorithm converges to the dense submatrix representing the community of $100$ musicians after $50$ iterations.  
 
