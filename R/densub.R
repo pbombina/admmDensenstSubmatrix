@@ -21,14 +21,14 @@
 #'
 #' \eqn{1_S} is the indicator function of the set \eqn{S} in \eqn{R^MxN} such that \eqn{1_S(X) = 0} if \eqn{X} in \eqn{S} and +infinity otherwise
 #'
-#' @param G: sampled binary matrix
-#' @param m: number of rows in dense submatrix
-#' @param n: number of columns in dense submatrix
-#' @param gamma:  \eqn{l_1} regularization parameter
-#' @param tau:    penalty parameter for equality constraint violation
-#' @param tol:    stopping tolerance in algorithm
-#' @param maxiter: maximum number of iterations of the algorithm to run
-#' @param quiet: toggles between displaying intermediate statistics
+#' @param G sampled binary matrix
+#' @param m number of rows in dense submatrix
+#' @param n number of columns in dense submatrix
+#' @param gamma  \eqn{l_1} regularization parameter
+#' @param tau    penalty parameter for equality constraint violation
+#' @param tol    stopping tolerance in algorithm
+#' @param maxiter maximum number of iterations of the algorithm to run
+#' @param quiet toggles between displaying intermediate statistics
 #' @return Rank one matrix with \eqn{mn} nonzero entries, matrix \eqn{Y} that is used to count the number of disagreements between \eqn{G} and \eqn{X}
 #' @export
 

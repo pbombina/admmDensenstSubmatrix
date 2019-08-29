@@ -8,21 +8,21 @@ densub(G, m, n, tau = 0.35, gamma = 6/(sqrt(m * n) * (q - p)),
   opt_tol = 1e-04, maxiter, quiet = TRUE)
 }
 \arguments{
-\item{G:}{sampled binary matrix}
+\item{G}{sampled binary matrix}
 
-\item{m:}{number of rows in dense submatrix}
+\item{m}{number of rows in dense submatrix}
 
-\item{n:}{number of columns in dense submatrix}
+\item{n}{number of columns in dense submatrix}
 
-\item{gamma:}{\eqn{l_1} regularization parameter}
+\item{tau}{penalty parameter for equality constraint violation}
 
-\item{tau:}{penalty parameter for equality constraint violation}
+\item{gamma}{\eqn{l_1} regularization parameter}
 
-\item{tol:}{stopping tolerance in algorithm}
+\item{maxiter}{maximum number of iterations of the algorithm to run}
 
-\item{maxiter:}{maximum number of iterations of the algorithm to run}
+\item{quiet}{toggles between displaying intermediate statistics}
 
-\item{quiet:}{toggles between displaying intermediate statistics}
+\item{tol}{stopping tolerance in algorithm}
 }
 \value{
 Rank one matrix with \eqn{mn} nonzero entries, matrix \eqn{Y} that is used to count the number of disagreements between \eqn{G} and \eqn{X}
