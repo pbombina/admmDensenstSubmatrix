@@ -1,4 +1,16 @@
 # admmDensenstSubmatrix
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{mathtools}
+
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\st}{\operatorname{s.t.}}
+\necommand{\P}{\operatorname{P}}
+
+
 # Introduction
 This is the R-package accompanying the paper ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf)).
 
