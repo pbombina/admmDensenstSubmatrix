@@ -18,11 +18,11 @@ densub(G, m, n, tau = 0.35, gamma = 6/(sqrt(m * n) * (q - p)),
 
 \item{gamma}{\eqn{l_1} regularization parameter}
 
+\item{opt_tol}{stopping tolerance in algorithm}
+
 \item{maxiter}{maximum number of iterations of the algorithm to run}
 
 \item{quiet}{toggles between displaying intermediate statistics}
-
-\item{tol}{stopping tolerance in algorithm}
 }
 \value{
 Rank one matrix with \eqn{mn} nonzero entries, matrix \eqn{Y} that is used to count the number of disagreements between \eqn{G} and \eqn{X}
