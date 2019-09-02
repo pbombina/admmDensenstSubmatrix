@@ -29,6 +29,8 @@
 #' @param opt_tol    stopping tolerance in algorithm
 #' @param maxiter maximum number of iterations of the algorithm to run
 #' @param quiet toggles between displaying intermediate statistics
+#' @importFrom stats runif
+#' @importFrom utils tail
 #' @return Rank one matrix with \eqn{mn} nonzero entries, matrix \eqn{Y} that is used to count the number of disagreements between \eqn{G} and \eqn{X}
 #' @export
 
