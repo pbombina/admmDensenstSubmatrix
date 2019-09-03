@@ -236,5 +236,5 @@ recovery=recovery+1
 
 ```
 
-Our algorithm converges to the dense submatrix representing the community of $100$ musicians after $50$ iterations.   
+Our algorithm converges to the dense submatrix representing the community of $100$ musicians after $50$ iterations.     
 
