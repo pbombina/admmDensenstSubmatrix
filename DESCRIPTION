@@ -1,7 +1,7 @@
 Package: admmDensestSubmatrix 
 Type: Package
 Title: ADMM to solve dense submatrix problem 
-Version: 0.1
+Version: 0.1.0
 Author: Brendan Ames <bpames@ua.edu>, Polina Bombina <pbombina@crimson.ua.edu> 
 Maintainer: Brendan Ames <bpames@ua.edu>, Polina Bombina <pbombina@crimson.ua.edu>
 Description: Iteratively solves the problem of identifying the densest mn-submatrix in a given or sampled binary matrix.
