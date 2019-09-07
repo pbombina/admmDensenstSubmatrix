@@ -139,16 +139,16 @@ image(admm$Y, useRaster=TRUE, axes=FALSE, main = "Matrix Y")
 
 The ADMM solver returns the optimal solutions $\mathbf{X}$ and $\mathbf{Y}$. It must be noted that matrices $\mathbf X$ and $\mathbf Y$ are identical to the actual structures of $\mathbf{X_0}$ and $\mathbf{Y_0}$. The planted submatrix is recovered.
 
-![Optimal solution \mathbf{X}](Rplot03.jpeg){width=400px}
+![Optimal solution \mathbf{X}](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot03.jpeg?raw=true)
 
 
-![Optimal Solution \mathbf{Y}](Rplot04.jpeg){width=400px}
+![Optimal Solution \mathbf{Y}](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot04.jpeg?raw=true)
 
 
 ## Collaboration Network
 The following is a simple example on how one could use the package to analyze the collaboration network found in the JAZZ dataset. It is known that this network contains a cluster of $100$ musicians which performed together.
 
-![JAZZ Network](0001.jpg){width=400px}
+![JAZZ Network](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/0001.jpg?raw=true)
 
 We have already prepared dataset to work with. More details can be found in the provided file `JAZZ_IN_R.R.`
 
