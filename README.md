@@ -41,7 +41,7 @@ the binary constraints with box constraints yields the convex problem:
 
 where ![](https://latex.codecogs.com/gif.latex?%5Cgamma%20%3E0) is a regularization parameter chosen to tune between the two objectives.
 
-It can be shown that the relaxation is exact when binary matrix $\mathbf{A}$ contains a single, relatively large dense ![](https://latex.codecogs.com/gif.latex?m%5Ctimes%20n block). For more information, see ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf))
+It can be shown that the relaxation is exact when binary matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D) contains a single, relatively large dense ![](https://latex.codecogs.com/gif.latex?m%5Ctimes%20n) block. For more information, see ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf))
 
 # Alternating Direction Method of multipliers for densest submatrix problem
 The alternating direction method of multipliers (ADMM) has been succesfully used in a broad spectrum of applications. The ADMM solves convex optimization problems with composite objective functions subject to equality constraints.  
