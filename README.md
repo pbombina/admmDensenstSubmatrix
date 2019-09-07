@@ -14,25 +14,22 @@ such that the submatrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7
 contains the maximum number of nonzero entries. That is, the densest ![](https://latex.codecogs.com/gif.latex?%24m%5Ctimes%20n%24)-submatrix problem seeks the densest
 ![](https://latex.codecogs.com/gif.latex?%24m%5Ctimes%20n%24)-submatrix of ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D).
 
-The densest $m\times n$-submatrix problem can be formulated as:
-
-$$\begin{equation}
-    \min_{\mathbf{X}, \mathbf{Y} \in { \{0,1\}}^{M\times N} } {\tr(\mathbf{Y} \mathbf{e} \mathbf{e}^T): \mathrm{P}_{\Omega}(\mathbf{X}-\mathbf{Y}) = \mathbf{0}, \tr(\mathbf{X} \mathbf{e} \mathbf{e}^T) = mn, \rank (\mathbf{X}) = 1 },
-\end{equation}$$
+The densest ![](https://latex.codecogs.com/gif.latex?m%5Ctimes%20n)-submatrix problem can be formulated as:
+![](https://latex.codecogs.com/gif.latex?%5Cmin_%7B%5Cmathbf%7BX%7D%2C%20%5Cmathbf%7BY%7D%20%5Cin%20%7B%20%5C%7B0%2C1%5C%7D%7D%5E%7BM%5Ctimes%20N%7D%20%7D%20%7B%5Ctr%28%5Cmathbf%7BY%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%3A%20%5Cmathrm%7BP%7D_%7B%5COmega%7D%28%5Cmathbf%7BX%7D-%5Cmathbf%7BY%7D%29%20%3D%20%5Cmathbf%7B0%7D%2C%20%5Ctr%28%5Cmathbf%7BX%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%20%3D%20mn%2C%20%5Crank%20%28%5Cmathbf%7BX%7D%29%20%3D%201%20%7D%2C)
 
 where
 
-* $\mathrm{P}_{\Omega}$ is the projection onto the index set of zero entries of matrix $\mathbf A$;
+* ![](https://latex.codecogs.com/gif.latex?%5Cmathrm%7BP%7D_%7B%5COmega%7D)is the projection onto the index set of zero entries of matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%20A);
 
-* $\tr$ is the matrix trace function;
+* ![](https://latex.codecogs.com/gif.latex?tr) is the matrix trace function;
 
-* $\Omega$ is the index set of zero entries of matrix $A$;
+* ![](https://latex.codecogs.com/gif.latex?%5COmega) is the index set of zero entries of matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%20A);
 
-* $\mathbf{X}$ is rank-one matrix with $mn$ nonzero entries;
+* ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX%7D) is rank-one matrix with ![](https://latex.codecogs.com/gif.latex?mn) nonzero entries;
 
-* $\mathbf{Y}$ is used to count the number of disagreements between $\mathbf A$ and $\mathbf X$;
+* ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BY%7D) is used to count the number of disagreements between ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX%7D);
 
-* $\mathbf{e}$ - all-ones vector.
+* ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7Be%7D) - all-ones vector.
 
 Unfortunately, optimization problems involving rank and binary constraints are intractable in general.
 
