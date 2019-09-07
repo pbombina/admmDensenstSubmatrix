@@ -7,7 +7,7 @@ The problem of identifying a dense submatrix is a fundamental problem in the  an
 See the tutorials below to get started.
 
 # The densest submatrix problem
-Let $[M] = \{1,2,\dots, M\}$ for each positive integer $M$.
+Let ![](https://latex.codecogs.com/gif.latex?%24%5BM%5D%20%3D%20%5C%7B1%2C2%2C%5Cdots%2C%20M%5C%7D%24)for each positive integer $M$.
 Given a matrix $\mathbf{A} \in R^{M\times N}$, the densest $m\times n$-submatrix problem seeks subsets $\bar U \subseteq {[M]}$ and $\bar V \subseteq {[N]}$ of cardinality
 $|\bar U|=m$ and $|\bar V| = n$, respectively,
 such that the submatrix $\mathbf{A}{[\bar U, \bar V]}$ with rows index by $\bar U$ and columns indexed by $\bar V$
