@@ -38,6 +38,7 @@ Relaxing the rank constraint with a nuclear norm penalty term,
 the binary constraints with box constraints yields the convex problem:
 
 ![](https://latex.codecogs.com/gif.latex?%5Cbegin%7Balign*%7D%20%5Cmin%20%5C%3B%20%26%20%5C%7C%5Cmathbf%7BX%7D%20%5C%7C_*%20&plus;%20%5Cgamma%20tr%28%5Cmathbf%7BY%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%20%5C%5C%20s.t.%20%5C%3B%20%26%20tr%28%5Cmathbf%7BX%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%20%3D%20mn%2C%20%5C%5C%20%26%20%5Cmathrm%7BP%7D_%5COmega%28%5Cmathbf%7BX%7D%20-%20%5Cmathbf%7BY%7D%29%20%3D%20%5Cmathbf%7B0%7D%2C%20%5C%5C%20%26%20%5Cmathbf%7BY%7D%20%5Cge%20%5Cmathbf%7B0%7D%2C%20%5C%5C%20%26%20%5Cmathbf%7B0%7D%20%5Cle%20%5Cmathbf%7BX%7D%20%5Cle%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%2C%20%5Cend%7Balign*%7D)
+
 where ![](https://latex.codecogs.com/gif.latex?%5Cgamma%20%3E0) is a regularization parameter chosen to tune between the two objectives.
 
 It can be shown that the relaxation is exact when binary matrix $\mathbf{A}$ contains a single, relatively large dense ![](https://latex.codecogs.com/gif.latex?m%5Ctimes%20n block). For more information, see ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf))
