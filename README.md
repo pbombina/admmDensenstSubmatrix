@@ -64,7 +64,7 @@ such that
 ![](https://latex.codecogs.com/gif.latex?%7B1%7D_S%28%5Cmathbf%7BX%7D%29%3D0%24%20if%20%24%5Cmathbf%7BX%7D%5Cin%20S), and ![](https://latex.codecogs.com/gif.latex?&plus;%5Cinfty) otherwise.
 
 Since our objective function is separable, we iteratively solve this optimization program using the ADMM.
-The basic idea is to rotate through $3$ steps:
+The basic idea is to rotate through 3 steps:
 
 1. minimize the augmented Lagrangian over primal variables,
 2. update dual variables usng the updated primal variables,
