@@ -105,11 +105,11 @@ image(random$dense_submatrix, useRaster=TRUE, axes=FALSE, main = "Matrix X0")
 image(random$disagreements, useRaster=TRUE, axes=FALSE, main = "Matrix Y0")
 ```
 
-Tne vizualization of the randomly generated matrix $\mathbf{A}$ helps us to understand its structure. It is clear that $\mathbf{A}$ contains a dense $50 \times 40$ block (in the bottom left corner).
+Tne vizualization of the randomly generated matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D) helps us to understand its structure. It is clear that ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D) contains a dense ![](https://latex.codecogs.com/gif.latex?50%20%5Ctimes%2040) block (in the bottom left corner).
 
-![Visual representation of randomly generated $\mathbf{A}$](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot.jpeg?raw=true)
+![Visual representation of randomly generated ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D)](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot.jpeg?raw=true)
 
-We can remove all noise and isolate an image of a rank-one matrix $\mathbf{X0}$ with $mn$ nonzero entries.
+We can remove all noise and isolate an image of a rank-one matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX0%7D) with ![](https://latex.codecogs.com/gif.latex?mn) nonzero entries.
 
 ![Visual representation of dense submatrix](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot01.jpeg?raw=true)
 
@@ -117,9 +117,6 @@ We can remove all noise and isolate an image of a rank-one matrix $\mathbf{X0}$ 
 Then we vizualize matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BY0%7D) to see the number of disagreements between original matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX0%7D).
 
 ![Disagreement between $\mathbf{A}$ and $\mathbf{X_0}$](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot02.jpeg?raw=true)
-
-
-
 
 We call the ADMM solver and visualize the output using the following commands.
 
@@ -137,7 +134,7 @@ image(admm$Y, useRaster=TRUE, axes=FALSE, main = "Matrix Y")
 ```
 
 
-The ADMM solver returns the optimal solutions $\mathbf{X}$ and $\mathbf{Y}$. It must be noted that matrices $\mathbf X$ and $\mathbf Y$ are identical to the actual structures of $\mathbf{X_0}$ and $\mathbf{Y_0}$. The planted submatrix is recovered.
+The ADMM solver returns the optimal solutions ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BY%7D). It must be noted that matrices ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BY%7D) are identical to the actual structures of ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX0%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BY0%7D). The planted submatrix is recovered.
 
 ![Optimal solution \mathbf{X}](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot03.jpeg?raw=true)
 
@@ -146,7 +143,7 @@ The ADMM solver returns the optimal solutions $\mathbf{X}$ and $\mathbf{Y}$. It 
 
 
 ## Collaboration Network
-The following is a simple example on how one could use the package to analyze the collaboration network found in the JAZZ dataset. It is known that this network contains a cluster of $100$ musicians which performed together.
+The following is a simple example on how one could use the package to analyze the collaboration network found in the JAZZ dataset. It is known that this network contains a cluster of 100 musicians which performed together.
 
 ![JAZZ Network](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/0001.jpg?raw=true)
 
@@ -196,5 +193,5 @@ recovery=recovery+1
 
 ```
 
-Our algorithm converges to the dense submatrix representing the community of $100$ musicians after $50$ iterations.     
+Our algorithm converges to the dense submatrix representing the community of 100 musicians after 50 iterations.     
 
