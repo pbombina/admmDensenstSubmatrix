@@ -81,7 +81,7 @@ We test this package on two different types of data: first, using random matrice
 ## Random matrices
 We first generate a random matrix with noise obscuring the planted submatrix using the function ``plantedsubmatrix``. and then call the function ``densub`` to recover the planted submatrix.
 
-```{r, eval=FALSE}
+```R
 # Initialize problem size and densities
 # You can play around with these parameters
 M <- 100 #number of rows of sampled matrix
@@ -97,7 +97,7 @@ random<-plantedsubmatrix(M = M, N = N,m = m,n = n,p = p,q = q)
 
 After generating the structure `random` containing the random matrix with desired planted structure, we can visually represent the matrix and planted submatrix as two-tone images, where dark pixels correspond to nonzero entries, and light pixels correspond to zero entries, using the following commands.
 
-```{r, eval=FALSE}
+```R
 
 # Plot sampled G and matrix representations.
 image(random$sampled_matrix, useRaster = TRUE, axes = FALSE, main = "Matrix A")
@@ -121,7 +121,7 @@ Then we vizualize matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BY0
 We call the ADMM solver and visualize the output using the following commands.
 
 
-```{r, eval=FALSE}
+```R
 #Call ADMM solver
 admm <- densub(G = random$sampled_matrix, m = m, n = n, tau = 0.35, gamma = 6/(sqrt(m*n)*(q-p)), opt_tol = 1.0e-4,maxiter = 500, quiet = TRUE)
 
@@ -149,7 +149,7 @@ The following is a simple example on how one could use the package to analyze th
 
 We have already prepared dataset to work with. More details can be found in the provided file `JAZZ_IN_R.R.`
 
-```{r jazz, eval=FALSE}
+```R
 #Load dataset
 load(file = "JAZZ.RData")
 
