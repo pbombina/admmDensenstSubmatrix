@@ -34,19 +34,13 @@ where
 Unfortunately, optimization problems involving rank and binary constraints are intractable in general.
 
 Relaxing the rank constraint with a nuclear norm penalty term,
-$\|\mathbf{X} \|_* = \sum_{i=1}^N \sigma_i(\mathbf{X})$, i.e., the sum of the singular values of matrix, and
+![](https://latex.codecogs.com/gif.latex?%5C%7C%5Cmathbf%7BX%7D%20%5C%7C_*%20%3D%20%5Csum_%7Bi%3D1%7D%5EN%20%5Csigma_i%28%5Cmathbf%7BX%7D%29), i.e., the sum of the singular values of matrix, and
 the binary constraints with box constraints yields the convex problem:
 
-$$\begin{align}
-	\min \; & \|\mathbf{X} \|_* + \gamma \tr(\mathbf{Y} \mathbf{e} \mathbf{e}^T)  \\
-	\st     \;   & \tr(\mathbf{X} \mathbf{e} \mathbf{e}^T) = mn, 	\\
-			         & \mathrm{P}_\Omega(\mathbf{X} - \mathbf{Y}) = \mathbf{0},	 \\
-			         & \mathbf{Y} \ge \mathbf{0}, \\
-			         & \mathbf{0} \le \mathbf{X} \le \mathbf{e} \mathbf{e}^T,
-\end{align}$$
-where $\gamma >0$ is a regularization parameter chosen to tune between the two objectives.
+![](https://latex.codecogs.com/gif.latex?%5Cbegin%7Balign*%7D%20%5Cmin%20%5C%3B%20%26%20%5C%7C%5Cmathbf%7BX%7D%20%5C%7C_*%20&plus;%20%5Cgamma%20tr%28%5Cmathbf%7BY%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%20%5C%5C%20s.t.%20%5C%3B%20%26%20tr%28%5Cmathbf%7BX%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%20%3D%20mn%2C%20%5C%5C%20%26%20%5Cmathrm%7BP%7D_%5COmega%28%5Cmathbf%7BX%7D%20-%20%5Cmathbf%7BY%7D%29%20%3D%20%5Cmathbf%7B0%7D%2C%20%5C%5C%20%26%20%5Cmathbf%7BY%7D%20%5Cge%20%5Cmathbf%7B0%7D%2C%20%5C%5C%20%26%20%5Cmathbf%7B0%7D%20%5Cle%20%5Cmathbf%7BX%7D%20%5Cle%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%2C%20%5Cend%7Balign*%7D)
+where ![](https://latex.codecogs.com/gif.latex?%5Cgamma%20%3E0) is a regularization parameter chosen to tune between the two objectives.
 
-It can be shown that the relaxation is exact when binary matrix $\mathbf{A}$ contains a single, relatively large dense $m\times n$ block. For more information, see ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf))
+It can be shown that the relaxation is exact when binary matrix $\mathbf{A}$ contains a single, relatively large dense ![](https://latex.codecogs.com/gif.latex?m%5Ctimes%20n block). For more information, see ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf))
 
 # Alternating Direction Method of multipliers for densest submatrix problem
 The alternating direction method of multipliers (ADMM) has been succesfully used in a broad spectrum of applications. The ADMM solves convex optimization problems with composite objective functions subject to equality constraints.  
@@ -54,22 +48,19 @@ The alternating direction method of multipliers (ADMM) has been succesfully used
 We direct the reader to Prof. Stephen Boyd’s website
 ([ADMM](http://stanford.edu/~boyd/papers/admm_distr_stats.html)) for a more thorough discussion of the ADMM.
 
-To apply ADMM to our problem, we introduce artificial variables $\mathbf{Q}$, $\mathbf{W}$ and $\mathbf{Z}$ to obtain the equivalent optimization problem:
+To apply ADMM to our problem, we introduce artificial variables ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BQ%7D), ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BW%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BZ%7D) to obtain the equivalent optimization problem:
 
-$$\begin{align}
-	\min \; & \|\mathbf{X} \|_* + \gamma \|\mathbf{Y} \|_1 +{1}_{\Omega_Q}(\mathbf{Q})+{1}_{\Omega_W}(\mathbf{W})+{1}_{\Omega_Z}(\mathbf{Z})\\
-\st       \; &  \mathbf{X}-\mathbf{Y}=\mathbf{Q},\mathbf{X}=\mathbf{W}, \mathbf{X}=\mathbf{Z}
-\end{align}$$
+![](https://latex.codecogs.com/gif.latex?%5Cbegin%7Balign*%7D%20%5Cmin%20%5C%3B%20%26%20%5C%7C%5Cmathbf%7BX%7D%20%5C%7C_*%20&plus;%20%5Cgamma%20%5C%7C%5Cmathbf%7BY%7D%20%5C%7C_1%20&plus;%7B1%7D_%7B%5COmega_Q%7D%28%5Cmathbf%7BQ%7D%29&plus;%7B1%7D_%7B%5COmega_W%7D%28%5Cmathbf%7BW%7D%29&plus;%7B1%7D_%7B%5COmega_Z%7D%28%5Cmathbf%7BZ%7D%29%5C%5C%20s.t.%20%5C%3B%20%26%20%5Cmathbf%7BX%7D-%5Cmathbf%7BY%7D%3D%5Cmathbf%7BQ%7D%2C%5Cmathbf%7BX%7D%3D%5Cmathbf%7BW%7D%2C%20%5Cmathbf%7BX%7D%3D%5Cmathbf%7BZ%7D%20%5Cend%7Balign*%7D)
 
 where
 
-* $\Omega_Q = \{\, \mathbf{Q}\in R^{M\times N} \mid P_{\tilde{N}}(Q)=0 \, \}$,
-* $\Omega_W =\{\, \mathbf{W}\in R^{M\times N} \mid  \mathbf{e}^T\mathbf{W} \mathbf{e}=mn \, \}$,
-* $\Omega_Z =\{\, \mathbf{Z}\in R^{M\times N} \mid  {Z}_{ij}\leq 1  \forall (i,j)\in M\times N \, \}$.
+* ![](https://latex.codecogs.com/gif.latex?%5COmega_Q%20%3D%20%5C%7B%5C%2C%20%5Cmathbf%7BQ%7D%5Cin%20R%5E%7BM%5Ctimes%20N%7D%20%5Cmid%20P_%7B%5Ctilde%7BN%7D%7D%28Q%29%3D0%20%5C%2C%20%5C%7D),
+* ![](https://latex.codecogs.com/gif.latex?%5COmega_W%20%3D%5C%7B%5C%2C%20%5Cmathbf%7BW%7D%5Cin%20R%5E%7BM%5Ctimes%20N%7D%20%5Cmid%20%5Cmathbf%7Be%7D%5ET%5Cmathbf%7BW%7D%20%5Cmathbf%7Be%7D%3Dmn%20%5C%2C%20%5C%7D),
+* ![](https://latex.codecogs.com/gif.latex?%5COmega_Z%20%3D%5C%7B%5C%2C%20%5Cmathbf%7BZ%7D%5Cin%20R%5E%7BM%5Ctimes%20N%7D%20%5Cmid%20%7BZ%7D_%7Bij%7D%5Cleq%201%20%5Cforall%20%28i%2Cj%29%5Cin%20M%5Ctimes%20N%20%5C%2C%20%5C%7D).
 
-Here ${1}_{S}: R^{M\times M} \rightarrow \left \{0,+\infty \right \}$  is the indicator function of the set $S \subseteq  R^{M\times N}$,
+Here ![](https://latex.codecogs.com/gif.latex?%7B1%7D_%7BS%7D%3A%20R%5E%7BM%5Ctimes%20M%7D%20%5Crightarrow%20%5Cleft%20%5C%7B0%2C&plus;%5Cinfty%20%5Cright%20%5C%7D)  is the indicator function of the set ![](https://latex.codecogs.com/gif.latex?S%20%5Csubseteq%20R%5E%7BM%5Ctimes%20N%7D),
 such that
-${1}_S(\mathbf{X})=0$  if $\mathbf{X}\in S$, and $+\infty$ otherwise.
+![](https://latex.codecogs.com/gif.latex?%7B1%7D_S%28%5Cmathbf%7BX%7D%29%3D0%24%20if%20%24%5Cmathbf%7BX%7D%5Cin%20S), and ![](https://latex.codecogs.com/gif.latex?&plus;%5Cinfty) otherwise.
 
 Since our objective function is separable, we iteratively solve this optimization program using the ADMM.
 The basic idea is to rotate through $3$ steps:
