@@ -72,7 +72,7 @@ The basic idea is to rotate through 3 steps:
 
 Interested readers are referred to ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf)). We include a summary of the algorithm below.
 
-![](ALG.png){width=600px}
+![](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/ALG.png?raw=true){width=600px}
 
 # Examples
 We test this package on two different types of data: first, using random matrices sampled from the planted dense $m \times n$ submtarix model and, second, real-world collaboration and communication networks.
