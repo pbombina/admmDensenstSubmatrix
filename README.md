@@ -73,7 +73,7 @@ The basic idea is to rotate through 3 steps:
 
 Interested readers are referred to ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf)). We include a summary of the algorithm below.
 
-![](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/ALG.png?raw=true){width=600px}
+![](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/ALG.png?raw=true)
 
 # Examples
 We test this package on two different types of data: first, using random matrices sampled from the planted dense $m \times n$ submtarix model and, second, real-world collaboration and communication networks.
@@ -107,16 +107,16 @@ image(random$disagreements, useRaster=TRUE, axes=FALSE, main = "Matrix Y0")
 
 Tne vizualization of the randomly generated matrix $\mathbf{A}$ helps us to understand its structure. It is clear that $\mathbf{A}$ contains a dense $50 \times 40$ block (in the bottom left corner).
 
-![Visual representation of randomly generated $\mathbf{A}$](Rplot.jpeg){width=400px}
+![Visual representation of randomly generated $\mathbf{A}$](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot.jpeg?raw=true)
 
 We can remove all noise and isolate an image of a rank-one matrix $\mathbf{X0}$ with $mn$ nonzero entries.
 
-![Visual representation of dense submatrix](Rplot01.jpeg){width=400px}
+![Visual representation of dense submatrix](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot01.jpeg?raw=true)
 
 
-Then we vizualize matrix $\mathbf{Y0}$ to see the number of disagreements between original matrix $\mathbf{A}$ and $\mathbf{X0}$.
+Then we vizualize matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BY0%7D) to see the number of disagreements between original matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX0%7D).
 
-![Disagreement between $\mathbf{A}$ and $\mathbf{X_0}$](Rplot02.jpeg){width=400px}
+![Disagreement between $\mathbf{A}$ and $\mathbf{X_0}$](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot02.jpeg?raw=true)
 
 
 
