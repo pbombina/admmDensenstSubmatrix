@@ -15,6 +15,7 @@ contains the maximum number of nonzero entries. That is, the densest ![](https:/
 ![](https://latex.codecogs.com/gif.latex?%24m%5Ctimes%20n%24)-submatrix of ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D).
 
 The densest ![](https://latex.codecogs.com/gif.latex?m%5Ctimes%20n)-submatrix problem can be formulated as:
+<p align="center">
 ![](https://latex.codecogs.com/gif.latex?%5Cmin_%7B%5Cmathbf%7BX%7D%2C%20%5Cmathbf%7BY%7D%20%5Cin%20%7B%20%5C%7B0%2C1%5C%7D%7D%5E%7BM%5Ctimes%20N%7D%20%7D%20%7B%5Ctr%28%5Cmathbf%7BY%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%3A%20%5Cmathrm%7BP%7D_%7B%5COmega%7D%28%5Cmathbf%7BX%7D-%5Cmathbf%7BY%7D%29%20%3D%20%5Cmathbf%7B0%7D%2C%20tr%28%5Cmathbf%7BX%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%20%3D%20mn%2C%20rank%20%28%5Cmathbf%7BX%7D%29%20%3D%201%20%7D)
 
 where
