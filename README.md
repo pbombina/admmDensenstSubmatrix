@@ -1,18 +1,18 @@
 # admmDensenstSubmatrix
 # Introduction
-This is the R-package accompanying the paper ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf)).
+This is the R-package accompanying the paper ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf).
 
 The problem of identifying a dense submatrix is a fundamental problem in the  analysis of matrix structure and complex networks. This package provides tools for identifying the densest submatrix of a given graph using first-order optimization methods.
 
 See the tutorials below to get started.
 
 # The densest submatrix problem
-Let ![](https://latex.codecogs.com/gif.latex?%24%5BM%5D%20%3D%20%5C%7B1%2C2%2C%5Cdots%2C%20M%5C%7D%24)for each positive integer $M$.
-Given a matrix $\mathbf{A} \in R^{M\times N}$, the densest $m\times n$-submatrix problem seeks subsets $\bar U \subseteq {[M]}$ and $\bar V \subseteq {[N]}$ of cardinality
-$|\bar U|=m$ and $|\bar V| = n$, respectively,
-such that the submatrix $\mathbf{A}{[\bar U, \bar V]}$ with rows index by $\bar U$ and columns indexed by $\bar V$
-contains the maximum number of nonzero entries. That is, the densest $m\times n$-submatrix problem seeks the densest
-$m\times n$-submatrix of $\mathbf{A}$.
+Let ![](https://latex.codecogs.com/gif.latex?%24%5BM%5D%20%3D%20%5C%7B1%2C2%2C%5Cdots%2C%20M%5C%7D%24)for each positive integer ![](https://latex.codecogs.com/gif.latex?%24M%24).
+Given a matrix ![](https://latex.codecogs.com/gif.latex?%24%5Cmathbf%7BA%7D%20%5Cin%20R%5E%7BM%5Ctimes%20N%7D%24), the densest ![](https://latex.codecogs.com/gif.latex?%24m%5Ctimes%20n%24)-submatrix problem seeks subsets ![](https://latex.codecogs.com/gif.latex?%5Cbar%20U%20%5Csubseteq%20%7B%5BM%5D%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cbar%20V%20%5Csubseteq%20%7B%5BN%5D%7D) of cardinality ![](
+https://latex.codecogs.com/gif.latex?%7C%5Cbar%20U%7C%3Dm) and ![](https://latex.codecogs.com/gif.latex?%7C%5Cbar%20V%7C%20%3D%20n), respectively,
+such that the submatrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D%7B%5B%5Cbar%20U%2C%20%5Cbar%20V%5D%7D) with rows index by ![](https://latex.codecogs.com/gif.latex?%5Cbar%20U) and columns indexed by !{}(https://latex.codecogs.com/gif.latex?%5Cbar%20V)
+contains the maximum number of nonzero entries. That is, the densest ![](https://latex.codecogs.com/gif.latex?%24m%5Ctimes%20n%24)-submatrix problem seeks the densest
+![](https://latex.codecogs.com/gif.latex?%24m%5Ctimes%20n%24)-submatrix of ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D).
 
 The densest $m\times n$-submatrix problem can be formulated as:
 
