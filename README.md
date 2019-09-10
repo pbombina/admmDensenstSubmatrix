@@ -12,7 +12,6 @@ See the tutorials below to get started.
 
 ```r
 #Install the development version from GitHub:
-# install.packages("admmDensestSubmatrix")
 install_github("pbombina/admmDensenstSubmatrix")
 
 ```
