@@ -8,6 +8,15 @@ The problem of identifying a dense submatrix is a fundamental problem in the  an
 
 See the tutorials below to get started.
 
+## Installation
+
+```r
+#Install the development version from GitHub:
+# install.packages("admmDensestSubmatrix")
+install_github("pbombina/admmDensenstSubmatrix")
+
+```
+
 # The densest submatrix problem
 Let ![](https://latex.codecogs.com/gif.latex?%5BM%5D%20%3D%20%5C%7B1%2C2%2C%5Cdots%2C%20M%5C%7D)for each positive integer ![](https://latex.codecogs.com/gif.latex?M).
 Given a matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D%20%5Cin%20R%5E%7BM%5Ctimes%20N%7D), the densest ![](https://latex.codecogs.com/gif.latex?%24m%5Ctimes%20n%24)-submatrix problem seeks subsets ![](https://latex.codecogs.com/gif.latex?%5Cbar%20U%20%5Csubseteq%20%7B%5BM%5D%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cbar%20V%20%5Csubseteq%20%7B%5BN%5D%7D) of cardinality ![](
