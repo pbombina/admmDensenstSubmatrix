@@ -1,3 +1,4 @@
+use_logo("C:/Users/Tom/Desktop/icon.png")
 # admmDensenstSubmatrix
 
 # Introduction
