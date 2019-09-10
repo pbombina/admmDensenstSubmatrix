@@ -1,4 +1,4 @@
-# admmDensenstSubmatrix  <img src="vignettes/icon.png" align="right" height=140/>
+# admmDensenstSubmatrix  <img src="vignettes/icon.png" align="right" height=170/>
 
 
 # Introduction
