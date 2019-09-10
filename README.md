@@ -1,4 +1,12 @@
-![](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/icon.png?raw=true)
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "vignettes/icon-",
+  out.width = "100%"
+)
+```
+
 
 # admmDensenstSubmatrix
 
