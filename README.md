@@ -1,14 +1,5 @@
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "vignettes/icon-",
-  out.width = "100%"
-)
-```
+# admmDensenstSubmatrix  <img src="vignettes/icon.png" align="right" height=140/>
 
-
-# admmDensenstSubmatrix
 
 # Introduction
 This is the `R`-package accompanying the paper ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf).
