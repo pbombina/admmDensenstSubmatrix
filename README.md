@@ -1,4 +1,5 @@
-use_logo("C:/Users/Tom/Desktop/icon.png")
+![](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/icon.png?raw=true)
+
 # admmDensenstSubmatrix
 
 # Introduction
