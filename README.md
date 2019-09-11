@@ -12,9 +12,16 @@ See the tutorials below to get started.
 
 ```r
 #Install the development version from GitHub:
-install_github("pbombina/admmDensenstSubmatrix")
+install_github("pbombina/admmDensenstSubmatrix", build_vignettes = TRUE)
 
 ```
+
+## Overview
+In this study we consider the densest submtarix problem which seeks to find the densest submatrix of the given size. We seek the submatrix of the desired size with maximum number of nonzero elements. We proposed a new convex relaxation to solve this problem which based on nuclear norm relaxation. Our relaxation correctly identifies the densestsubmatrix of the fixed size in random matrices if the entries within this submatrix are significantly more likely to be nonzero than arbitrary entry of the matrix.  
+
+See the paper for more details, in particular regarding the mathematical derivation of optimization problem and recovery guarantees.
+
+
 
 # The densest submatrix problem
 Let ![](https://latex.codecogs.com/gif.latex?%5BM%5D%20%3D%20%5C%7B1%2C2%2C%5Cdots%2C%20M%5C%7D)for each positive integer ![](https://latex.codecogs.com/gif.latex?M).
