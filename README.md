@@ -25,30 +25,8 @@ remotes::install_github("pbombina/admmDensenstSubmatrix", dependencies = TRUE,
 
 ```
 
-
-## Contents of this repository
-`R` scripts are organized into the following subdirectories. 
-
-- [data_preparation](data_preparation/): preparation of benchmark data files
-- [ensemble_clustering](ensemble_clustering/): run and evaluate ensemble clustering
-- [evaluate_results](evaluate_results/): scripts to evaluate results from all methods
-- [helpers](helpers/): helper functions
-- [plots_and_tables](plots_and_tables/): generate plots and tables of results
-- [range_k](range_k/): run and evaluate FlowSOM over range of values k (number of clusters)
-- [run_methods](run_methods/): scripts to run all methods (or instructions to run graphical interfaces, where required)
-- [stability_analysis](stability_analysis/): run and evaluate methods for stability analysis
-
-Supplementary files from the published paper are included in the following directory:
-
-- [supplementary_files](supplementary_files/): supplementary files from paper (latest version: November 18, 2016)
-
-R scripts and summary reports for updated results are included in the following directory:
-
-- [updates](updates/): updated results for new clustering methods or new reference data sets
-
-
 # Examples
-We test this package on two different types of data: first, using random matrices sampled from the planted dense $m \times n$ submtarix model and, second, real-world collaboration and communication networks.
+We test this package on two different types of data: first, using random matrices sampled from the planted dense m x n submtarix model and, second, real-world collaboration and communication networks.
 
 ## Random matrices
 We first generate a random matrix with noise obscuring the planted submatrix using the function ``plantedsubmatrix``. and then call the function ``densub`` to recover the planted submatrix.
