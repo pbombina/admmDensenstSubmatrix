@@ -24,8 +24,10 @@ remotes::install_github("pbombina/admmDensenstSubmatrix", dependencies = TRUE,
                          build_vignettes = TRUE)
 
 ```
-## Table of Contents
-- `plantedsubmatrix.R` generates binary matrix sampled from dense submatrix of particular size  
+# Table of Contents
+- `plantedsubmatrix.R` generates binary matrix sampled from dense submatrix of particular size
+- `densub.R` ADMM algorithm for our relaxation of the densest subgraph and submatrix problems
+- `mat_shrink.R` soft-threholding operator applied to vector of singular values (used in X-update step of `densub.R`)
 
 # Examples
 We test this package on two different types of data: first, using random matrices sampled from the planted dense m x n submtarix model and, second, real-world collaboration and communication networks.
