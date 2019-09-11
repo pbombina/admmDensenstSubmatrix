@@ -8,7 +8,7 @@ The problem of identifying a dense submatrix is a fundamental problem in the  an
 
 See the tutorials below to get started.
 
-## Installation
+# Installation
 
 ```r
 #Install the development version from GitHub:
