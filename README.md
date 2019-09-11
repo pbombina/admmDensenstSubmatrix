@@ -12,7 +12,16 @@ See the tutorials below to get started.
 
 ```r
 #Install the development version from GitHub:
-install_github("pbombina/admmDensenstSubmatrix", build_vignettes = TRUE)
+# install.packages("remotes")
+remotes::install_github("pbombina/admmDensenstSubmatrix")
+
+```
+To also build the vignettes use:
+
+```r
+#install.packages("remotes")
+remotes::install_github("pbombina/admmDensenstSubmatrix", dependencies = TRUE,
+                         build_vignettes = TRUE)
 
 ```
 
