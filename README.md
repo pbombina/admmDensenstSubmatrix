@@ -24,6 +24,8 @@ remotes::install_github("pbombina/admmDensenstSubmatrix", dependencies = TRUE,
                          build_vignettes = TRUE)
 
 ```
+## Table of Contents
+- `plantedsubmatrix.R` generates binary matrix sampled from dense submatrix of particular size  
 
 # Examples
 We test this package on two different types of data: first, using random matrices sampled from the planted dense m x n submtarix model and, second, real-world collaboration and communication networks.
