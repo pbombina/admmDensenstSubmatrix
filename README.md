@@ -4,7 +4,7 @@
 # Introduction
 This is the `R`-package accompanying the paper ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf).
 
-The problem of identifying a dense submatrix is a fundamental problem in the  analysis of matrix structure and complex networks. This package provides tools for identifying the densest submatrix of a given graph using first-order optimization methods.
+The problem of identifying a dense submatrix is a fundamental problem in the  analysis of matrix structure and complex networks. This package provides tools for identifying the densest submatrix of the fixed size in a given graph/matrix using first-order optimization methods.
 
 See the tutorials below to get started.
 
@@ -24,13 +24,6 @@ remotes::install_github("pbombina/admmDensenstSubmatrix", dependencies = TRUE,
                          build_vignettes = TRUE)
 
 ```
-
-## Overview
-In this study we consider the densest submtarix problem which seeks to find the densest submatrix of the given size.
-
-We seek the submatrix of the desired size with maximum number of nonzero elements. We proposed a new convex relaxation to solve this problem which based on nuclear norm relaxation. Our relaxation correctly identifies the densestsubmatrix of the fixed size in random matrices if the entries within this submatrix are significantly more likely to be nonzero than arbitrary entry of the matrix.  
-
-See the paper for more details, in particular regarding the derivation of Alternating Direction Method of Multipliers (ADMM) for densest submatrix problem.
 
 
 ## Contents of this repository
