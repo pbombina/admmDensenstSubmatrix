@@ -17,49 +17,30 @@ install_github("pbombina/admmDensenstSubmatrix", build_vignettes = TRUE)
 ```
 
 ## Overview
-In this study we consider the densest submtarix problem which seeks to find the densest submatrix of the given size. We seek the submatrix of the desired size with maximum number of nonzero elements. We proposed a new convex relaxation to solve this problem which based on nuclear norm relaxation. Our relaxation correctly identifies the densestsubmatrix of the fixed size in random matrices if the entries within this submatrix are significantly more likely to be nonzero than arbitrary entry of the matrix.  
+In this study we consider the densest submtarix problem which seeks to find the densest submatrix of the given size.
 
-See the paper for more details, in particular regarding the mathematical derivation of optimization problem and recovery guarantees.
+We seek the submatrix of the desired size with maximum number of nonzero elements. We proposed a new convex relaxation to solve this problem which based on nuclear norm relaxation. Our relaxation correctly identifies the densestsubmatrix of the fixed size in random matrices if the entries within this submatrix are significantly more likely to be nonzero than arbitrary entry of the matrix.  
+
+See the paper for more details, in particular regarding the mathematical derivation of ADMM and recovery guarantees.
 
 
+## Contents of this repository
+`R` scripts are organized into the following subdirectories. All scripts contain comments explaining the overall purpose and individual steps.
 
-# The densest submatrix problem
-Let ![](https://latex.codecogs.com/gif.latex?%5BM%5D%20%3D%20%5C%7B1%2C2%2C%5Cdots%2C%20M%5C%7D)for each positive integer ![](https://latex.codecogs.com/gif.latex?M).
-Given a matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D%20%5Cin%20R%5E%7BM%5Ctimes%20N%7D), the densest ![](https://latex.codecogs.com/gif.latex?%24m%5Ctimes%20n%24)-submatrix problem seeks subsets ![](https://latex.codecogs.com/gif.latex?%5Cbar%20U%20%5Csubseteq%20%7B%5BM%5D%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cbar%20V%20%5Csubseteq%20%7B%5BN%5D%7D) of cardinality ![](
-https://latex.codecogs.com/gif.latex?%7C%5Cbar%20U%7C%3Dm) and ![](https://latex.codecogs.com/gif.latex?%7C%5Cbar%20V%7C%20%3D%20n), respectively,
-such that the submatrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D%7B%5B%5Cbar%20U%2C%20%5Cbar%20V%5D%7D) with rows index by ![](https://latex.codecogs.com/gif.latex?%5Cbar%20U) and columns indexed by ![](https://latex.codecogs.com/gif.latex?%5Cbar%20V)
-contains the maximum number of nonzero entries. That is, the densest ![](https://latex.codecogs.com/gif.latex?%24m%5Ctimes%20n%24)-submatrix problem seeks the densest
-![](https://latex.codecogs.com/gif.latex?%24m%5Ctimes%20n%24)-submatrix of ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D).
+data_preparation: preparation of benchmark data files
+ensemble_clustering: run and evaluate ensemble clustering
+evaluate_results: scripts to evaluate results from all methods
+helpers: helper functions
+plots_and_tables: generate plots and tables of results
+range_k: run and evaluate FlowSOM over range of values k (number of clusters)
+run_methods: scripts to run all methods (or instructions to run graphical interfaces, where required)
+stability_analysis: run and evaluate methods for stability analysis
+Supplementary files from the published paper are included in the following directory:
 
-The densest ![](https://latex.codecogs.com/gif.latex?m%5Ctimes%20n)-submatrix problem can be formulated as:
+supplementary_files: supplementary files from paper (latest version: November 18, 2016)
+R scripts and summary reports for updated results are included in the following directory:
 
-![](https://latex.codecogs.com/gif.latex?%5Cmin_%7B%5Cmathbf%7BX%7D%2C%20%5Cmathbf%7BY%7D%20%5Cin%20%7B%20%5C%7B0%2C1%5C%7D%7D%5E%7BM%5Ctimes%20N%7D%20%7D%20%7B%5Ctr%28%5Cmathbf%7BY%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%3A%20%5Cmathrm%7BP%7D_%7B%5COmega%7D%28%5Cmathbf%7BX%7D-%5Cmathbf%7BY%7D%29%20%3D%20%5Cmathbf%7B0%7D%2C%20tr%28%5Cmathbf%7BX%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%20%3D%20mn%2C%20rank%20%28%5Cmathbf%7BX%7D%29%20%3D%201%20%7D)
-  
-where
-
-* ![](https://latex.codecogs.com/gif.latex?%5Cmathrm%7BP%7D_%7B%5COmega%7D)is the projection onto the index set of zero entries of matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%20A);
-
-* ![](https://latex.codecogs.com/gif.latex?tr) is the matrix trace function;
-
-* ![](https://latex.codecogs.com/gif.latex?%5COmega) is the index set of zero entries of matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%20A);
-
-* ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX%7D) is rank-one matrix with ![](https://latex.codecogs.com/gif.latex?mn) nonzero entries;
-
-* ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BY%7D) is used to count the number of disagreements between ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX%7D);
-
-* ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7Be%7D) - all-ones vector.
-
-Unfortunately, optimization problems involving rank and binary constraints are intractable in general.
-
-Relaxing the rank constraint with a nuclear norm penalty term,
-![](https://latex.codecogs.com/gif.latex?%5C%7C%5Cmathbf%7BX%7D%20%5C%7C_*%20%3D%20%5Csum_%7Bi%3D1%7D%5EN%20%5Csigma_i%28%5Cmathbf%7BX%7D%29), i.e., the sum of the singular values of matrix, and
-the binary constraints with box constraints yields the convex problem:
-
-![](https://latex.codecogs.com/gif.latex?%5Cbegin%7Balign*%7D%20%5Cmin%20%5C%3B%20%26%20%5C%7C%5Cmathbf%7BX%7D%20%5C%7C_*%20&plus;%20%5Cgamma%20tr%28%5Cmathbf%7BY%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%20%5C%5C%20s.t.%20%5C%3B%20%26%20tr%28%5Cmathbf%7BX%7D%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%29%20%3D%20mn%2C%20%5C%5C%20%26%20%5Cmathrm%7BP%7D_%5COmega%28%5Cmathbf%7BX%7D%20-%20%5Cmathbf%7BY%7D%29%20%3D%20%5Cmathbf%7B0%7D%2C%20%5C%5C%20%26%20%5Cmathbf%7BY%7D%20%5Cge%20%5Cmathbf%7B0%7D%2C%20%5C%5C%20%26%20%5Cmathbf%7B0%7D%20%5Cle%20%5Cmathbf%7BX%7D%20%5Cle%20%5Cmathbf%7Be%7D%20%5Cmathbf%7Be%7D%5ET%2C%20%5Cend%7Balign*%7D)
-
-where ![](https://latex.codecogs.com/gif.latex?%5Cgamma%20%3E0) is a regularization parameter chosen to tune between the two objectives.
-
-It can be shown that the relaxation is exact when binary matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D) contains a single, relatively large dense ![](https://latex.codecogs.com/gif.latex?m%5Ctimes%20n) block. For more information, see ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf))
+updates: updated results for new clustering methods or new reference data sets
 
 # Alternating Direction Method of multipliers for densest submatrix problem
 The alternating direction method of multipliers (ADMM) has been succesfully used in a broad spectrum of applications. The ADMM solves convex optimization problems with composite objective functions subject to equality constraints.  
