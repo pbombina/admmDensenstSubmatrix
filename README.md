@@ -21,57 +21,29 @@ In this study we consider the densest submtarix problem which seeks to find the 
 
 We seek the submatrix of the desired size with maximum number of nonzero elements. We proposed a new convex relaxation to solve this problem which based on nuclear norm relaxation. Our relaxation correctly identifies the densestsubmatrix of the fixed size in random matrices if the entries within this submatrix are significantly more likely to be nonzero than arbitrary entry of the matrix.  
 
-See the paper for more details, in particular regarding the mathematical derivation of ADMM and recovery guarantees.
+See the paper for more details, in particular regarding the derivation of Alternating Direction Method of Multipliers (ADMM) for densest submatrix problem.
 
 
 ## Contents of this repository
-`R` scripts are organized into the following subdirectories. All scripts contain comments explaining the overall purpose and individual steps.
+`R` scripts are organized into the following subdirectories. 
 
-data_preparation: preparation of benchmark data files
-ensemble_clustering: run and evaluate ensemble clustering
-evaluate_results: scripts to evaluate results from all methods
-helpers: helper functions
-plots_and_tables: generate plots and tables of results
-range_k: run and evaluate FlowSOM over range of values k (number of clusters)
-run_methods: scripts to run all methods (or instructions to run graphical interfaces, where required)
-stability_analysis: run and evaluate methods for stability analysis
+- [data_preparation](data_preparation/): preparation of benchmark data files
+- [ensemble_clustering](ensemble_clustering/): run and evaluate ensemble clustering
+- [evaluate_results](evaluate_results/): scripts to evaluate results from all methods
+- [helpers](helpers/): helper functions
+- [plots_and_tables](plots_and_tables/): generate plots and tables of results
+- [range_k](range_k/): run and evaluate FlowSOM over range of values k (number of clusters)
+- [run_methods](run_methods/): scripts to run all methods (or instructions to run graphical interfaces, where required)
+- [stability_analysis](stability_analysis/): run and evaluate methods for stability analysis
+
 Supplementary files from the published paper are included in the following directory:
 
-supplementary_files: supplementary files from paper (latest version: November 18, 2016)
+- [supplementary_files](supplementary_files/): supplementary files from paper (latest version: November 18, 2016)
+
 R scripts and summary reports for updated results are included in the following directory:
 
-updates: updated results for new clustering methods or new reference data sets
+- [updates](updates/): updated results for new clustering methods or new reference data sets
 
-# Alternating Direction Method of multipliers for densest submatrix problem
-The alternating direction method of multipliers (ADMM) has been succesfully used in a broad spectrum of applications. The ADMM solves convex optimization problems with composite objective functions subject to equality constraints.  
-
-We direct the reader to Prof. Stephen Boyd’s website
-([ADMM](http://stanford.edu/~boyd/papers/admm_distr_stats.html)) for a more thorough discussion of the ADMM.
-
-To apply ADMM to our problem, we introduce artificial variables ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BQ%7D), ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BW%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BZ%7D) to obtain the equivalent optimization problem:
-
-![](https://latex.codecogs.com/gif.latex?%5Cbegin%7Balign*%7D%20%5Cmin%20%5C%3B%20%26%20%5C%7C%5Cmathbf%7BX%7D%20%5C%7C_*%20&plus;%20%5Cgamma%20%5C%7C%5Cmathbf%7BY%7D%20%5C%7C_1%20&plus;%7B1%7D_%7B%5COmega_Q%7D%28%5Cmathbf%7BQ%7D%29&plus;%7B1%7D_%7B%5COmega_W%7D%28%5Cmathbf%7BW%7D%29&plus;%7B1%7D_%7B%5COmega_Z%7D%28%5Cmathbf%7BZ%7D%29%5C%5C%20s.t.%20%5C%3B%20%26%20%5Cmathbf%7BX%7D-%5Cmathbf%7BY%7D%3D%5Cmathbf%7BQ%7D%2C%5Cmathbf%7BX%7D%3D%5Cmathbf%7BW%7D%2C%20%5Cmathbf%7BX%7D%3D%5Cmathbf%7BZ%7D%20%5Cend%7Balign*%7D)
-
-where
-
-* ![](https://latex.codecogs.com/gif.latex?%5COmega_Q%20%3D%20%5C%7B%5C%2C%20%5Cmathbf%7BQ%7D%5Cin%20R%5E%7BM%5Ctimes%20N%7D%20%5Cmid%20P_%7B%5Ctilde%7BN%7D%7D%28Q%29%3D0%20%5C%2C%20%5C%7D),
-* ![](https://latex.codecogs.com/gif.latex?%5COmega_W%20%3D%5C%7B%5C%2C%20%5Cmathbf%7BW%7D%5Cin%20R%5E%7BM%5Ctimes%20N%7D%20%5Cmid%20%5Cmathbf%7Be%7D%5ET%5Cmathbf%7BW%7D%20%5Cmathbf%7Be%7D%3Dmn%20%5C%2C%20%5C%7D),
-* ![](https://latex.codecogs.com/gif.latex?%5COmega_Z%20%3D%5C%7B%5C%2C%20%5Cmathbf%7BZ%7D%5Cin%20R%5E%7BM%5Ctimes%20N%7D%20%5Cmid%20%7BZ%7D_%7Bij%7D%5Cleq%201%20%5Cforall%20%28i%2Cj%29%5Cin%20M%5Ctimes%20N%20%5C%2C%20%5C%7D).
-
-Here ![](https://latex.codecogs.com/gif.latex?%7B1%7D_%7BS%7D%3A%20R%5E%7BM%5Ctimes%20M%7D%20%5Crightarrow%20%5Cleft%20%5C%7B0%2C&plus;%5Cinfty%20%5Cright%20%5C%7D)  is the indicator function of the set ![](https://latex.codecogs.com/gif.latex?S%20%5Csubseteq%20R%5E%7BM%5Ctimes%20N%7D),
-such that
-![](https://latex.codecogs.com/gif.latex?%7B1%7D_S%28%5Cmathbf%7BX%7D%29%3D0%24%20if%20%24%5Cmathbf%7BX%7D%5Cin%20S), and ![](https://latex.codecogs.com/gif.latex?&plus;%5Cinfty) otherwise.
-
-Since our objective function is separable, we iteratively solve this optimization program using the ADMM.
-The basic idea is to rotate through 3 steps:
-
-1. minimize the augmented Lagrangian over primal variables,
-2. update dual variables usng the updated primal variables,
-3. calculate primal and dual residuals.
-
-Interested readers are referred to ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf)). We include a summary of the algorithm below.
-
-![](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/ALG.png?raw=true)
 
 # Examples
 We test this package on two different types of data: first, using random matrices sampled from the planted dense $m \times n$ submtarix model and, second, real-world collaboration and communication networks.
