@@ -2,7 +2,7 @@
 
 
 # Introduction
-This is the `R`-package accompanying the paper ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf).
+This is the `R`-package accompanying the paper [Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf).
 
 The problem of identifying a dense submatrix is a fundamental problem in the  analysis of matrix structure and complex networks. This package provides tools for identifying the densest submatrix of the fixed size in a given graph/matrix using first-order optimization methods.
 
@@ -145,3 +145,9 @@ recovery = recovery+1
 
 Our algorithm converges to the dense submatrix representing the community of 100 musicians after 50 iterations.     
 
+### How to contribute
+- Fork, clone, edit, commit, push, create pull request
+- Use RStudio
+
+### Reporting bugs and other issues
+If you encounter a clear bug, please file a minimal reproducible example on github.
