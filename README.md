@@ -68,7 +68,6 @@ We can remove all noise and isolate an image of a rank-one matrix ![](https://la
 
 ![Visual representation of dense submatrix](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot01.jpeg?raw=true)
 
-
 Then we vizualize matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BY0%7D) to see the number of disagreements between original matrix ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BA%7D) and ![](https://latex.codecogs.com/gif.latex?%5Cmathbf%7BX0%7D).
 
 ![Disagreement between $\mathbf{A}$ and $\mathbf{X_0}$](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot02.jpeg?raw=true)
@@ -93,20 +92,18 @@ The ADMM solver returns the optimal solutions ![](https://latex.codecogs.com/gif
 
 ![Optimal solution \mathbf{X}](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot03.jpeg?raw=true)
 
-
 ![Optimal Solution \mathbf{Y}](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/Rplot04.jpeg?raw=true)
-
 
 ## Collaboration Network
 The following is a simple example on how one could use the package to analyze the collaboration network found in the JAZZ dataset. It is known that this network contains a cluster of 100 musicians which performed together.
 
 ![JAZZ Network](https://github.com/pbombina/admmDensenstSubmatrix/blob/master/vignettes/0001.jpg?raw=true)
 
-We have already prepared dataset to work with. More details can be found in the provided file `JAZZ_IN_R.R.`
+We have already prepared dataset to work with. More details can be found in the provided file `JAZZ_IN_R.R` ( in `vignettes` folder).
 
 ```R
 #Load dataset
-load(file = "JAZZ.RData")
+load(file = "JAZZ.RData") 
 
 #Initialize problem size and densities
 G <- new #define matrix G equivalent to JAZZ dataset 
@@ -117,8 +114,6 @@ opt_tol <- 1.0e-2 #optimal tolerance
 verbose <- 1
 maxiter <- 2000 #number of iterations
 gamma <- 8/n #regularization parameter
-
-
 
 #call ADMM solver
 admm <- densub(G = G, m = m, n = n, tau = tau, gamma = gamma, opt_tol = opt_tol, maxiter=maxiter, quiet = TRUE) 
@@ -141,10 +136,6 @@ recovery = recovery+1
 } else {
   recovery = 0 #Recovery condition 
   }
-
-
-
-
 
 ```
 
