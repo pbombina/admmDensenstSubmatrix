@@ -111,30 +111,30 @@ m <- 100 #clique size or the number of rows of the dense submatrix
 n <- 100 #clique size of the number of columns of the dense sumbatrix
 tau <- 0.85 #regularization parameter
 opt_tol <- 1.0e-2 #optimal tolerance
-verbose <- 1
 maxiter <- 2000 #number of iterations
 gamma <- 8/n #regularization parameter
 
 #call ADMM solver
 admm <- densub(G = G, m = m, n = n, tau = tau, gamma = gamma, opt_tol = opt_tol, maxiter=maxiter, quiet = TRUE) 
-# Planted solution X0.
+
+# Planted solution X0
 X0 <- matrix(0L, nrow = 198, ncol = 198) #construct rank-one matrix X0
 X0[1:100,1:100] <- matrix(1L, nrow = 100, ncol = 100)#define dense block
 
-# Planted solution Y0.
+# Planted solution Y0
 Y0 <- matrix(0L, nrow = 198, ncol = 198) #construct matrix for counting disagreements between G and X0
-Y0[1:100,1:100] < matrix(1L,nrow = 100,ncol = 1000)-G[1:100,1:100]
+Y0[1:100,1:100] < matrix(1L,nrow = 100,ncol = 1000)-G[1:100,1:100]  
 
-#Check primal and dual residuals.
-C <- admm$X-X0
+#Check primal and dual residuals
+C <- admm$X-X0 
 a <- norm(C, "F") #Frobenius norm of matrix C 
 b <- norm(X0,"F") #Frobenius norm of matrix X0
-recovery <- matrix(0L,nrow = 1, ncol = 1)#create recovery matrix
+recovery <- matrix(0L,nrow = 1, ncol = 1)#create recovery condition matrix
 
-if (a/b^2<opt_tol){
+if (a/b^2<opt_tol){ #Recovery condition 
 recovery = recovery+1
 } else {
-  recovery = 0 #Recovery condition 
+  recovery = 0 
   }
 
 ```
