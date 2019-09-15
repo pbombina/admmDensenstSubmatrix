@@ -141,9 +141,9 @@ recovery = recovery+1
 
 Our algorithm converges to the dense submatrix representing the community of 100 musicians after 50 iterations.     
 
-### How to contribute
+# How to contribute
 - Fork, clone, edit, commit, push, create pull request
 - Use RStudio
 
-### Reporting bugs and other issues
+# Reporting bugs and other issues
 If you encounter a clear bug, please file a minimal reproducible example on github.
