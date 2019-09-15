@@ -109,7 +109,7 @@ load(file = "JAZZ.RData")
 G <- new #define matrix G equivalent to JAZZ dataset 
 m <- 100 #clique size or the number of rows of the dense submatrix 
 n <- 100 #clique size of the number of columns of the dense sumbatrix
-ta <- 0.85 #regularization parameter
+tau <- 0.85 #regularization parameter
 opt_tol <- 1.0e-2 #optimal tolerance
 verbose <- 1
 maxiter <- 2000 #number of iterations
