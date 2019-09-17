@@ -2,7 +2,7 @@
 
 
 # Introduction
-This is the `R`-package accompanying the paper [Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf).
+This is the `R`-package accompanying the paper [Convex optimization for the densest subgraph and densest submatrix problems](https://arxiv.org/abs/1904.03272).
 
 See also [`Matlab`-code](https://github.com/pbombina/admmDensestSubmatrix_Matlab/blob/master/README.md)
 
