@@ -1,12 +1,12 @@
 Package: admmDensestSubmatrix 
 Type: Package
-Title: ADMM to solve dense submatrix problem 
+Title: Alternating Direction Method Of Multipliers To Solve Dense Dubmatrix Problem 
 Version: 0.1.0
 Author: Brendan Ames <bpames@ua.edu>, Polina Bombina <pbombina@crimson.ua.edu> 
 Maintainer: Polina Bombina <pbombina@crimson.ua.edu>
 Description: Iteratively solves the problem of identifying the densest mn-submatrix in a given or sampled binary matrix.
      The problem is formulated as convex relaxation using nuclear and L_1 norms.
-     This method works for matrices containig a single dense submatrix.
+     This method works for matrices containing a single dense submatrix.
 License: CC0
 Depends: R (>= 3.5.0)
 Encoding: UTF-8
