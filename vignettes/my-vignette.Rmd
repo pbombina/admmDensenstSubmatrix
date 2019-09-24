@@ -79,7 +79,7 @@ $$\begin{align}
 \end{align}$$
 where $\gamma >0$ is a regularization parameter chosen to tune between the two objectives.
 
-It can be shown that the relaxation is exact when binary matrix $\mathbf{A}$ contains a single, relatively large dense $m\times n$ block. For more information, see ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf))
+It can be shown that the relaxation is exact when binary matrix $\mathbf{A}$ contains a single, relatively large dense $m\times n$ block. For more information, see ([Convex optimization for the densest subgraph and densest submatrix problems](https://arxiv.org/abs/1904.03272)
 
 # Alternating Direction Method of multipliers for densest submatrix problem
 The alternating direction method of multipliers (ADMM) has been succesfully used in a broad spectrum of applications. The ADMM solves convex optimization problems with composite objective functions subject to equality constraints.  
@@ -111,7 +111,7 @@ The basic idea is to rotate through $3$ steps:
 2. update dual variables usng the updated primal variables,
 3. calculate primal and dual residuals.
 
-Interested readers are referred to ([Convex optimization for the densest subgraph and densest submatrix problems](https://github.com/bpames/Densest-Submatrix-Paper/blob/master/Manuscript/dsm-arxiv2019.pdf)). We include a summary of the algorithm below.
+Interested readers are referred to ([Convex optimization for the densest subgraph and densest submatrix problems](https://arxiv.org/abs/1904.03272). We include a summary of the algorithm below.
 
 ![](ALG.png){width=600px}
 
